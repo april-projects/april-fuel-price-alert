@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <style>
+        body {
+            background-image: url('https://tencent.cos.mobaijun.com/img/icon/background.jpg');
+            background-size: cover;
+            background-color: #333;
+            color: #000;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid #54d1d5;
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background: linear-gradient(rgba(112, 160, 164, 0.8), rgba(112, 160, 164, 0.3));
+            color: #030303;
+        }
+
+        p {
+            margin: 20px 0;
+            color: #000;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        h3 {
+            text-align: center;
+            color: #000;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+
+        blockquote {
+            text-align: center;
+            color: #000;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        blockquote {
+            text-align: left;
+            border-left: 4px solid #54d1d5;
+            padding: 10px;
+            margin: 20px;
+            font-style: italic;
+            color: #51a862;
+        }
+    </style>
+    <title></title>
+</head>
+<body>
+<h1 th:text="${title}">十堰今日油价</h1>
+<!--/*@thymesVar id="plusHours" type="com"*/-->
+<p style="text-align: center;"
+   th:text="|当日更新时间: ${#temporals.format(#temporals.createNow().plusHours(8), 'yyyy-MM-dd HH:mm:ss')} 单位:元/升|"></p>
+<table>
+    <thead>
+    <tr style="background-color: rgba(112, 160, 164, 0.5);">
+        <th>汽油型号</th>
+        <th>油价</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="entry : ${oilData}">
+        <td th:text="${entry.key}">Type</td>
+        <td th:text="${entry.value}">Price</td>
+    </tr>
+    </tbody>
+</table>
+<!-- 油价上涨信息-->
+<h3 style="text-align: center; color: #030303;">油价上涨信息</h3>
+<blockquote style="text-align: center;" th:utext="${#vars.oilPriceAdjust}">油价上涨信息</blockquote>
+<!--型号描述-->
+<h3 style="text-align: center; accent-color: #030303;">汽油型号说明</h3>
+<blockquote style="text-align: center;" th:utext="${#vars.oilDeScript.replaceAll(';', '</br></br>')}">汽油型号简介
+</blockquote>
+</body>
+</html>
