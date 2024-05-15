@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://images.pexels.com/photos/10131851/pexels-photo-10131851.jpeg');
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+}
+
+.content-container {
+    /* 设置内容框的宽度为设备宽度的80% */
+    width: 80%;
+    /* 设置内容框的最大宽度为800px，以避免在大屏幕上过度拉伸 */
+    max-width: 800px;
+    /* 居中内容框 */
+    margin: 0 auto;
+    padding: 20px;
+    /* 添加半透明背景，以提高内容可读性 */
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+.background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background-image: url('https://images.pexels.com/photos/10131851/pexels-photo-10131851.jpeg');
+    background-size: cover;
+    background-color: #333;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+th, td {
+    border: 1px solid #10a309;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background: linear-gradient(rgba(112, 160, 164, 0.8), rgba(112, 160, 164, 0.3));
+    color: rgb(28, 117, 128);
+}
+
+p {
+    margin: 20px 0;
+    color: #807419;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+h3 {
+    text-align: center;
+    color: #ffc12e;
+    text-shadow: 2px 2px 4px rgb(128, 116, 25);
+}
+
+blockquote {
+    text-align: center;
+    color: #ffc12e;
+    text-shadow: 1px 1px 2px rgb(128, 116, 25);
+}
+
+blockquote {
+    text-align: left;
+    border-left: 4px solid #54d1d5;
+    padding: 10px;
+    margin: 20px;
+    font-style: italic;
+    color: #ffc12e;
+}
